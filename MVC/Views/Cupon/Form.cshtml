@@ -1,0 +1,29 @@
+﻿@using MVC.DTO;
+@model CuponDTO;
+
+<div>
+    <p class="h1">
+        Cupon
+    </p>
+</div>
+<hr />
+@using(Html.BeginForm("Form", "Cupon", FormMethod.Post)){
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            @Html.HiddenFor(model => model.IdCupon)
+            @Html.LabelFor(model => model.Codigo, new{ @class="form-label" })
+            @Html.TextBoxFor(model => model.Codigo, new{ @class = "form-control" })
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            @Html.LabelFor(model => model.Descuento, new{ @class="form-label" })
+            @Html.TextBoxFor(model => model.Descuento, new{ @class = "form-control" })
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            @Html.LabelFor(model => model.CantidadMinima, new{ @class="form-label" })
+            @Html.TextBoxFor(model => model.CantidadMinima, new{ @class = "form-control" })
+        </div>
+        <div class="col-12 text-center justify-content-center my-3">
+            <button type="submit" class="btn btn-outline-success">GUARDAR</button>
+        </div>
+    </div>
+}

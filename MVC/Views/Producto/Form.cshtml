@@ -1,0 +1,31 @@
+﻿@using MVC.DTO;
+@model ProductoDTO
+
+<div>
+    <p class="h1">Producto</p>
+</div>
+<hr />
+@using(Html.BeginForm("Form", "Producto", FormMethod.Post)){
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            @Html.HiddenFor(model => model.IdProducto)
+            @Html.LabelFor(model => model.Nombre, new{ @class = "form-label" })
+            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            @Html.LabelFor(model => model.Precio, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Precio, new { @class = "form-control" })
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            @Html.LabelFor(model => model.Categoria, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Categoria, new { @class = "form-control" })
+        </div>
+        <div class="col-12">
+            @Html.LabelFor(model => model.UrlImagen, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.UrlImagen, new { @class = "form-control" })
+        </div>
+        <div class="col-12 my-3 text-center">
+            <button type="submit" class="btn btn-outline-success">GUARDAR</button>
+        </div>
+    </div>
+}
